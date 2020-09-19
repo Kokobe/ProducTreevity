@@ -12,14 +12,18 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 import android.os.CountDownTimer;
 
-public class MainActivity extends AppCompatActivity {
+public class TimerMain extends AppCompatActivity {
 
-    public void rumTimer() {
+    public void runTimer(View view) {
         Countdown countdown = new Countdown(0, 1, 7);
+        final Button startButton = (Button) findViewById(R.id.start_timer);
+        startButton.setVisibility(View.INVISIBLE);
         final TextView mainTimer = (TextView) findViewById(R.id.main_timer);
+        mainTimer.setVisibility(View.VISIBLE);
         mainTimer.setText(countdown.toString());
         new CountDownTimer((long)(countdown.getSecs()*1000), 1000) {
             public void onTick(long millisUntilFinished) {
@@ -30,14 +34,14 @@ public class MainActivity extends AppCompatActivity {
                 mainTimer.setText("FINIS");
             }
         }.start();
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //hello
         super.onCreate(savedInstanceState);
-        rumTimer();
+        setContentView(R.layout.activity_main);
+//        runTimer();
     }
 
 
