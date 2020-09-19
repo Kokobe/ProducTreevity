@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StudentHomeActivity"
-    android:background="@drawable/studenthome_background">
+    android:background="@drawable/home_background">
 
     <ImageView
         android:id="@+id/button4"
         android:layout_width="350dp"
         android:layout_height="195dp"
-        android:layout_marginBottom="500dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/quiz_shome"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/button6"
