@@ -4,7 +4,7 @@
  * Four decrementers: h-m-s, m-s, s, and default (one second less)
  */
 
-package com.example.productreevity;
+package com.example.productreevity.classes;
 
 public class Countdown {
     private int secs;

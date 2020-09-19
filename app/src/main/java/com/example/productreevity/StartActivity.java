@@ -1,5 +1,6 @@
 package com.example.productreevity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -17,15 +18,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 
-import android.widget.TextView;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     private FirebaseAuth mAuth;
+    private ImageView button;
 
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mConditionRef = mRootRef.child("condition");
@@ -72,10 +75,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //hello
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_start);
 
         firebaseLogin();
+        button = (ImageView) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                openOnboard1();
+                Log.e("OnboardStart", "click");
+            }
+        });
+
+    }
+
+    public void openOnboard1() {
+        Intent intent = new Intent(this, OccupationActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -96,5 +113,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
 
 }

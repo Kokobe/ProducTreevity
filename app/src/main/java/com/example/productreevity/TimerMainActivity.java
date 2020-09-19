@@ -13,7 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.os.CountDownTimer;
 
-public class TimerMain extends AppCompatActivity {
+import com.example.productreevity.classes.Countdown;
+
+public class TimerMainActivity extends AppCompatActivity {
 
     final String TAG = "TimerMain";
 
@@ -39,7 +41,7 @@ public class TimerMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //hello
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.timer_main_activity);
+        setContentView(R.layout.activity_timer);
 //        runTimer();
     }
 
