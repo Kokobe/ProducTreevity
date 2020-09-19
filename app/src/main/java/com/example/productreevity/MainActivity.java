@@ -47,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             // Write a message to the database @VARJ
+                            User student = new User("Varij", "lasdjkf", "123456", false);
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference userRef = database.getReference("user2");
 
                             Map<String, Object> hopperUpdates = new HashMap<>();
-                            hopperUpdates.put("nickname", "Amazing Grace");
+                            hopperUpdates.put("nickname", "Amazing");
                             hopperUpdates.put("lol", "lalalal");
+                            hopperUpdates.put("jhaveriv", student);
                             userRef.updateChildren(hopperUpdates);
 
                         } else {
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 
