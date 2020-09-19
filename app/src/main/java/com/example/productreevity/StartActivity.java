@@ -49,15 +49,19 @@ public class StartActivity extends AppCompatActivity {
                             Log.e(TAG, "signInAnonymously:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            // Write a message to the database @VARJ
-                            User student = new User("Varij", "lasdjkf", "123456", false);
+                            // create a new profile
+                            User student = new User("Varij", "jhaveriv", "jhaveriv@uci.edu", "qwerty", "student", "7894562");
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            DatabaseReference userRef = database.getReference("user2");
-
+                            DatabaseReference userRef = database.getReference("users");
+                            student.changeSeeds(1);
                             Map<String, Object> hopperUpdates = new HashMap<>();
-                            hopperUpdates.put("nickname", "Amazing");
-                            hopperUpdates.put("lol", "lalalal");
-                            hopperUpdates.put("jhaveriv", student);
+//                            hopperUpdates.put("nickname", "Amazing");
+//                            hopperUpdates.put("lol", "lalalal");
+                            if(hopperUpdates.containsKey(student.getUsername())) {
+                                // check if in database & pull from that
+                            } else {
+                                hopperUpdates.put(student.getUsername(), student);
+                            }
                             userRef.updateChildren(hopperUpdates);
 
                         } else {
