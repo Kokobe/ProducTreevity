@@ -41,8 +41,13 @@ public class StartActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         //hello
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
+//        Intent intent = new Intent(StartActivity.this, MyNotificationService.class);
+//        intent.setAction(MyNotificationService.ACTION_START_FOREGROUND_SERVICE);
+//        startService(intent);
 
         firebaseLogin();
         button = (ImageView) findViewById(R.id.button);
