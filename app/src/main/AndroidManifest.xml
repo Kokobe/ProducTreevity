@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
-        <activity android:name=".Teacher"></activity>
+        <activity android:name=".TeacherStats"></activity>
+        <activity android:name=".StudentStats" />
+        <activity android:name=".Timer" />
+        <activity android:name=".Teacher" />
         <activity android:name=".Student" />
         <activity android:name=".Onboard1" />
         <activity
