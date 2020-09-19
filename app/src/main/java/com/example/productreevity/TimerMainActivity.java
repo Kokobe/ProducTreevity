@@ -1,8 +1,13 @@
 package com.example.productreevity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.util.Log;
 import android.view.View;
@@ -17,9 +22,11 @@ import com.example.productreevity.classes.Countdown;
 
 public class TimerMainActivity extends AppCompatActivity {
 
+    private static final String CHANNEL_ID = "default";
     final String TAG = "TimerMain";
 
     public void runTimer(View view) {
+        createNotificationChannel();
         Countdown countdown = new Countdown(0, 1, 7);
         final Button startButton = (Button) findViewById(R.id.start_timer);
         startButton.setVisibility(View.INVISIBLE);
@@ -75,7 +82,31 @@ public class TimerMainActivity extends AppCompatActivity {
         sendNotification();
     }
 
+    private void createNotificationChannel() {
+        Log.e(TAG, "create notification channel");
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
     private void sendNotification() {
-
+        Log.e(TAG, "send notification");
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default")
+                .setSmallIcon(R.drawable.notification_icon)
+                .setContentTitle("Don't lose your producTreevity")
+                .setContentText("Return to the app within 15 seconds and we won't end your session.")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        int notificationId = 0;
+        notificationManager.notify(notificationId, builder.build());
     }
 }
