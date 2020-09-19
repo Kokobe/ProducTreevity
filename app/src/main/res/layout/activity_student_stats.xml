@@ -52,7 +52,9 @@
         android:layout_width="350dp"
         android:layout_height="271dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="69dp"
         android:background="@drawable/chart_studentstats"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />

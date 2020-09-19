@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.productreevity">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,12 +28,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TeacherStatsActivity" />
-        <activity android:name=".StudentStatsActivity" />
-        <activity android:name=".TeacherHomeActivity" />
-        <activity android:name=".StudentHomeActivity" />
-        <activity android:name=".OccupationActivity" />
-        <activity android:name=".TimerMainActivity" />
+
+        <activity
+            android:name=".TeacherStatsActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".StudentStatsActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".TeacherHomeActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".StudentHomeActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".OccupationActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".TimerMainActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+
+        <service
+            android:name=".MyNotificationService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

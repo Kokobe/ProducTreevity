@@ -1,6 +1,8 @@
 package com.example.productreevity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.productreevity.classes.User;
@@ -39,27 +41,27 @@ public class StartActivity extends AppCompatActivity {
     DatabaseReference mUsersRef = mRootRef.child("users");
     FirebaseUser mUser;
 
+    String studentID;
+
     protected void onCreate(Bundle savedInstanceState) {
         //hello
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.sharedPrefFileName), Context.MODE_PRIVATE);
+        studentID = sharedPref.getString(getString(R.string.student_id_key), "");
+
         firebaseLogin();
         button = (ImageView) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                openOnboard1();
-                Log.e("OnboardStart", "click");
-            }
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(mActivty, OccupationActivity.class);
+            startActivity(intent);
         });
 
-    }
-
-    public void openOnboard1() {
-        Intent intent = new Intent(this, OccupationActivity.class);
-        startActivity(intent);
     }
 
     void firebaseLogin() {
@@ -67,7 +69,6 @@ public class StartActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
 
         mAuth.signInAnonymously()
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -77,6 +78,15 @@ public class StartActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.e(TAG, "signInAnonymously:success");
                             mUser = mAuth.getCurrentUser();
+
+                            //save uid for future
+                            SharedPreferences sharedPref = getSharedPreferences(
+                                    getString(R.string.sharedPrefFileName), Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPref.edit();
+                            editor.putString(getString(R.string.uid_key), mUser.getUid());
+                            editor.apply();
+
+                            studentID = sharedPref.getString(getString(R.string.student_id_key), "");
 
                             DatabaseReference userRef = mUsersRef.child(mUser.getUid());
                             userRef.addListenerForSingleValueEvent(postUserReadListener);
@@ -96,35 +106,39 @@ public class StartActivity extends AppCompatActivity {
     private ValueEventListener postUserReadListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
-            if (dataSnapshot.exists()) {
-                Intent i = new Intent(mActivty, StudentHomeActivity.class);
-                startActivity(i);
-                /*
-                User user = dataSnapshot.getValue(User.class);
-                user.seeds += 1;
-                mUsersRef.child(user.user_id).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.e(TAG, "success in writing");
-                    }
-                })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.e(TAG, "failure in writing");
-                            }
-                        });
 
-                 */
+            if (dataSnapshot.exists()) { // if user exists
+
+
+
+
+                User user = dataSnapshot.getValue(User.class);
+                if (user.type.equals("student"))
+                {
+                    Intent i = new Intent(mActivty, StudentHomeActivity.class);
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(mActivty, TeacherHomeActivity.class);
+                    startActivity(i);
+                }
+//                user.changeSeeds(1);
+//                mUsersRef.child(user.user_id).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        Log.e(TAG, "success in writing");
+//                    }
+//                })
+//                        .addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                Log.e(TAG, "failure in writing");
+//                            }
+//                        });
             }
             else { //create new profile
-                User user = new User(mUser.getUid(),"Varij", "jhaveriv", "jhaveriv@uci.edu", "qwerty", "student", "7894562");
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference userRef = database.getReference("users");
-                user.changeSeeds(1);
-                Map<String, Object> userData = new HashMap<>();
-                userData.put(mUser.getUid(), user);
-                mUsersRef.updateChildren(userData);
+
+               //have the user press the start button
             }
 
         }
