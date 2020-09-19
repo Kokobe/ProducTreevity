@@ -20,6 +20,9 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     private FirebaseAuth mAuth;
@@ -43,11 +46,14 @@ public class MainActivity extends AppCompatActivity {
                             Log.e(TAG, "signInAnonymously:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            // Write a message to the database
+                            // Write a message to the database @VARJ
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            DatabaseReference myRef = database.getReference("message");
+                            DatabaseReference userRef = database.getReference("user2");
 
-                            myRef.setValue("Hello, World!" + user.getUid());
+                            Map<String, Object> hopperUpdates = new HashMap<>();
+                            hopperUpdates.put("nickname", "Amazing Grace");
+                            hopperUpdates.put("lol", "lalalal");
+                            userRef.updateChildren(hopperUpdates);
 
                         } else {
                             // If sign in fails, display a message to the user.
