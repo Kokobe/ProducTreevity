@@ -12,8 +12,15 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    public void rumTimer() {
+        Countdown timer = new Countdown(1, 0, 0);
+        final TextView mainTimer = (TextView) findViewById(R.id.main_timer);
+        mainTimer.setText();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        rumTimer();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
