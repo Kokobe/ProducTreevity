@@ -6,15 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class OccupationActivity extends AppCompatActivity {
-    private Button button2; //student button
-    private Button button3; //teacher button
+    private ImageView button2; //student button
+    private ImageView button3; //teacher button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ocupation);
-        button2 = (Button) findViewById(R.id.button2);
+        button2 = (ImageView) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -22,7 +23,7 @@ public class OccupationActivity extends AppCompatActivity {
                 openStudent();
             }
         });
-        button3 = (Button) findViewById(R.id.button3);
+        button3 = (ImageView) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +33,7 @@ public class OccupationActivity extends AppCompatActivity {
         });
     }
     public void openStudent() {
-        Intent intent = new Intent(this, StudentHomeActivity.class);
+        Intent intent = new Intent(this, StudentSignUpActivity.class);
         startActivity(intent);
     }
     public void openTeacher() {

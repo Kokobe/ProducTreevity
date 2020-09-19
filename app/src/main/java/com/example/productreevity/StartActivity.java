@@ -57,6 +57,10 @@ public class StartActivity extends AppCompatActivity {
 
     }
 
+    public void openOnboard1() {
+        Intent intent = new Intent(this, OccupationActivity.class);
+        startActivity(intent);
+    }
 
     void firebaseLogin() {
 
@@ -133,12 +137,5 @@ public class StartActivity extends AppCompatActivity {
         }
     };
 
-
-
-
-    public void openOnboard1() {
-        Intent intent = new Intent(this, OccupationActivity.class);
-        startActivity(intent);
-    }
 
 }

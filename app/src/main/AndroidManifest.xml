@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
+        <activity android:name=".StudentLogInActivity"></activity>
+        <activity android:name=".StudentSignUpActivity" />
         <activity
-
             android:name=".StartActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ProducTreevity.NoActionBar">
@@ -20,8 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".TeacherStatsActivity"></activity>
+        <activity android:name=".TeacherStatsActivity" />
         <activity android:name=".StudentStatsActivity" />
         <activity android:name=".TeacherHomeActivity" />
         <activity android:name=".StudentHomeActivity" />
