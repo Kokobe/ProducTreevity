@@ -18,7 +18,7 @@ import android.os.CountDownTimer;
 public class MainActivity extends AppCompatActivity {
 
     public void rumTimer() {
-        Countdown countdown = new Countdown(1, 1, 7);
+        Countdown countdown = new Countdown(0, 1, 7);
         final TextView mainTimer = (TextView) findViewById(R.id.main_timer);
         mainTimer.setText(countdown.toString());
         new CountDownTimer((long)(countdown.getSecs()*1000), 1000) {
@@ -37,18 +37,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //hello
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         rumTimer();
     }
 
