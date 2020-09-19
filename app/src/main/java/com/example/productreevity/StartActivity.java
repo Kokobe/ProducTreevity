@@ -99,9 +99,9 @@ public class StartActivity extends AppCompatActivity {
             if (dataSnapshot.exists()) {
                 Intent i = new Intent(mActivty, StudentHomeActivity.class);
                 startActivity(i);
-                /*
+
                 User user = dataSnapshot.getValue(User.class);
-                user.seeds += 1;
+                user.changeSeeds(1);
                 mUsersRef.child(user.user_id).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -114,8 +114,6 @@ public class StartActivity extends AppCompatActivity {
                                 Log.e(TAG, "failure in writing");
                             }
                         });
-
-                 */
             }
             else { //create new profile
                 User user = new User(mUser.getUid(),"Varij", "jhaveriv", "jhaveriv@uci.edu", "qwerty", "student", "7894562");
