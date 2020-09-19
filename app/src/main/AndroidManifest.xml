@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
-        <activity android:name=".TeacherLogInActivity"></activity>
+        <activity android:name=".StudBreakChooseActivity"></activity>
+        <activity android:name=".TeacherLogInActivity" />
         <activity android:name=".StudentLogInActivity" />
         <activity android:name=".StudentSignUpActivity" />
         <activity
@@ -22,12 +23,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TeacherStatsActivity" />
-        <activity android:name=".StudentStatsActivity" />
-        <activity android:name=".TeacherHomeActivity" />
-        <activity android:name=".StudentHomeActivity" />
-        <activity android:name=".OccupationActivity" />
-        <activity android:name=".TimerMainActivity" />
+        <activity
+            android:name=".TeacherStatsActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".StudentStatsActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".TeacherHomeActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".StudentHomeActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".OccupationActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".TimerMainActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
     </application>
 
 </manifest>
