@@ -15,6 +15,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
+
         button4 = (ImageView) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
