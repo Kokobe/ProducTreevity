@@ -10,12 +10,14 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="316dp"
+        android:layout_height="57dp"
         android:layout_marginTop="50dp"
+        android:fontFamily="@font/futura_medium"
+        android:gravity="center"
         android:text="ProducTreevity"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
+        android:textColor="#FFF59A"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

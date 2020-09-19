@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.productreevity">
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -8,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
-        <activity android:name=".TeacherSendingAssignmentsActivity"></activity>
+        <activity android:name=".StudentShopActivity"></activity>
+        <activity android:name=".TeacherSendingAssignmentsActivity" />
         <activity android:name=".TeacherEncouragingWordsActivity" />
         <activity android:name=".Break4Activity" />
         <activity android:name=".Break3Activity" />
@@ -28,7 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".TeacherStatsActivity"
             android:theme="@style/Theme.ProducTreevity.NoActionBar" />

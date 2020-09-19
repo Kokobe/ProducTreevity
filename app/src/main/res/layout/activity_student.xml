@@ -11,11 +11,13 @@
         android:id="@+id/button4"
         android:layout_width="350dp"
         android:layout_height="195dp"
+        android:layout_marginTop="80dp"
         android:layout_marginBottom="500dp"
-        android:background="@drawable/quiz_shome"
+        android:src="@drawable/quiz_shome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/button6"
@@ -23,7 +25,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/stats_studenthome_btn"
+        android:src="@drawable/stats_studenthome_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
@@ -33,7 +35,7 @@
         android:layout_height="150dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="14dp"
-        android:background="@drawable/shop_studenthome_btn"
+        android:src="@drawable/shop_studenthome_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
@@ -42,7 +44,7 @@
         android:layout_width="350dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/todo_studenthomepage"
+        android:src="@drawable/todo_studenthomepage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
@@ -52,7 +54,7 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/notes_studenthome"
+        android:src="@drawable/notes_studenthome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
@@ -62,7 +64,7 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/hum_studenthome"
+        android:src="@drawable/hum_studenthome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
