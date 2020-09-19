@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class StudentLogInActivity extends AppCompatActivity {
-    private Button button12; //student log-in button
+    private Button button12; //student log-in button to student home
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

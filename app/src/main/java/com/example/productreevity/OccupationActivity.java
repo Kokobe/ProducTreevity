@@ -37,7 +37,7 @@ public class OccupationActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openTeacher() {
-        Intent intent = new Intent(this, TeacherHomeActivity.class);
+        Intent intent = new Intent(this, TeacherSignUpActivity.class);
         startActivity(intent);
     }
 }
