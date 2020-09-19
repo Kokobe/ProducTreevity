@@ -2,6 +2,8 @@ package com.example.productreevity;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -100,11 +102,16 @@ public class TimerMainActivity extends AppCompatActivity {
     }
     private void sendNotification() {
         Log.e(TAG, "send notification");
+//        Intent intent = new Intent(this, TimerMainActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default")
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle("Don't lose your producTreevity")
                 .setContentText("Return to the app within 15 seconds and we won't end your session.")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+//                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         int notificationId = 0;
         notificationManager.notify(notificationId, builder.build());
