@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
@@ -21,6 +22,9 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MyNotificationService extends Service {
 
@@ -34,20 +38,34 @@ public class MyNotificationService extends Service {
 
     public static final String ACTION_PLAY = "ACTION_PLAY";
 
+    NotificationChannel chan;
+    NotificationManager manager = null;
+    Service ref;
+
     public MyNotificationService() {
     }
 
     @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+    public IBinder onBind(Intent arg0) {
+        return null;
     }
+
 
     @Override
     public void onCreate() {
         super.onCreate();
         Log.d(TAG_FOREGROUND_SERVICE, "My foreground service onCreate().");
+        ref = this;
     }
+
+    @Override
+    public void onDestroy() {
+        Log.e(TAG, "onDestroy");
+        stoptimertask();
+        super.onDestroy();
+
+    }
+
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -72,7 +90,10 @@ public class MyNotificationService extends Service {
                         break;
                 }
         }
-        return super.onStartCommand(intent, flags, startId);
+        super.onStartCommand(intent, flags, startId);
+        startTimer();
+
+        return START_STICKY;
     }
 
     /* Used to build and start foreground service. */
@@ -82,81 +103,24 @@ public class MyNotificationService extends Service {
             createNotificationChannel("my_service", "My Background Service");
         } else {
 
-            // Create notification default intent.
-//            Intent intent = new Intent();
-//            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-                Intent intent = new Intent(this, TimerMainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-
-            // Create notification builder.
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-
-            // Make notification show big text.
-            NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
-            bigTextStyle.setBigContentTitle("Music player implemented by foreground service.");
-            bigTextStyle.bigText("Android foreground service is a android service which can run in foreground always, it can be controlled by user via notification.");
-            // Set big text style.
-            builder.setStyle(bigTextStyle);
-
-            builder.setWhen(System.currentTimeMillis());
-            builder.setSmallIcon(R.mipmap.ic_launcher);
-            Bitmap largeIconBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_background);
-            builder.setLargeIcon(largeIconBitmap);
-            // Make the notification max priority.
-            builder.setPriority(Notification.PRIORITY_MAX);
-            // Make head-up notification.
-            builder.setFullScreenIntent(pendingIntent, true);
-
-            // Add Play button intent in notification.
-            Intent playIntent = new Intent(this, MyNotificationService.class);
-            playIntent.setAction(ACTION_PLAY);
-            PendingIntent pendingPlayIntent = PendingIntent.getService(this, 0, playIntent, 0);
-            NotificationCompat.Action playAction = new NotificationCompat.Action(android.R.drawable.ic_media_play, "Play", pendingPlayIntent);
-            builder.addAction(playAction);
-
-            // Add Pause button intent in notification.
-            Intent pauseIntent = new Intent(this, MyNotificationService.class);
-            pauseIntent.setAction(ACTION_PAUSE);
-            PendingIntent pendingPrevIntent = PendingIntent.getService(this, 0, pauseIntent, 0);
-            NotificationCompat.Action prevAction = new NotificationCompat.Action(android.R.drawable.ic_media_pause, "Pause", pendingPrevIntent);
-            builder.addAction(prevAction);
-
-            // Build the notification.
-            Notification notification = builder.build();
-
-            // Start foreground service.
-            startForeground(1, notification);
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private void createNotificationChannel(String channelId, String channelName) {
-        Intent resultIntent = new Intent(this, StartActivity.class);
+        ///Intent resultIntent = new Intent(this, StartActivity.class);
 // Create the TaskStackBuilder and add the intent, which inflates the back stack
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addNextIntentWithParentStack(resultIntent);
-        PendingIntent resultPendingIntent =
-                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+//        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+//        stackBuilder.addNextIntentWithParentStack(resultIntent);
+//        PendingIntent resultPendingIntent =
+//                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
 
-        NotificationChannel chan = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT);
+        chan = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH);
         chan.setLightColor(Color.BLUE);
         chan.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager  = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         assert manager != null;
         manager.createNotificationChannel(chan);
-
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, channelId);
-        Notification notification = notificationBuilder.setOngoing(true)
-                .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle("App is running in background")
-                .setPriority(NotificationManager.IMPORTANCE_MIN)
-                .setCategory(Notification.CATEGORY_SERVICE)
-                .setContentIntent(resultPendingIntent) //intent
-                .build();
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(1, notificationBuilder.build());
-        startForeground(1, notification);
     }
 
 
@@ -168,5 +132,67 @@ public class MyNotificationService extends Service {
 
         // Stop the foreground service.
         stopSelf();
+    }
+
+
+    Timer timer;
+    TimerTask timerTask;
+    String TAG = "Timers";
+    int Your_X_SECS = 5;
+
+    //we are going to use a handler to be able to run in our TimerTask
+    final Handler handler = new Handler();
+
+
+    public void startTimer() {
+        //set a new Timer
+        timer = new Timer();
+
+        //initialize the TimerTask's job
+        initializeTimerTask();
+
+        //schedule the timer, after the first 5000ms the TimerTask will run every 10000ms
+        timer.schedule(timerTask, 5000, Your_X_SECS * 1000); //
+        //timer.schedule(timerTask, 5000,1000); //
+    }
+
+    public void stoptimertask() {
+        //stop the timer, if it's not already null
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+    }
+
+    public void initializeTimerTask() {
+
+        timerTask = new TimerTask() {
+            public void run() {
+
+                //use a handler to run a toast that shows the current timestamp
+                handler.post(new Runnable() {
+                    @RequiresApi(api = Build.VERSION_CODES.O)
+                    public void run() {
+
+                        Intent intent = new Intent(ref, TimerMainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        PendingIntent pendingIntent = PendingIntent.getActivity(ref, 0, intent, 0);
+
+                        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(ref, chan.getId());
+                        Notification notification = notificationBuilder.setOngoing(true)
+                                .setSmallIcon(R.drawable.ic_launcher_background)
+                                .setContentTitle("Please return to Activity")
+                                .setPriority(NotificationManager.IMPORTANCE_HIGH)
+                                .setCategory(Notification.CATEGORY_MESSAGE)
+                                .setContentIntent(pendingIntent) //intent
+                                .build();
+                        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(ref);
+                        notificationManager.notify(1, notificationBuilder.build());
+                        startForeground(1, notification);
+
+                    }
+                });
+            }
+        };
     }
 }
