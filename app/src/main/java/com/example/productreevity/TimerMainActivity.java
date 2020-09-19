@@ -59,8 +59,19 @@ public class TimerMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 //        runTimer();
-    }
+        Button button16 = (Button) findViewById(R.id.button16);
+        button16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                openBreakSel();
+            }
+        });
+    }
+    public void openBreakSel() {
+        Intent intent = new Intent(this, StudBreakActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

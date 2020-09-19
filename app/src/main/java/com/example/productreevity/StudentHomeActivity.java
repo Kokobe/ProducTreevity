@@ -6,15 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class StudentHomeActivity extends AppCompatActivity {
-    private Button button4; //timer button
-    private Button button6; //student stats button
+    private ImageView button4; //timer button
+    private ImageView button6; //student stats button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
-        button4 = (Button) findViewById(R.id.button4);
+        button4 = (ImageView) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -22,7 +23,7 @@ public class StudentHomeActivity extends AppCompatActivity {
                 openTimer();
             }
         });
-        button6 = (Button) findViewById(R.id.button6);
+        button6 = (ImageView) findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,4 +42,3 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
 
 }
-

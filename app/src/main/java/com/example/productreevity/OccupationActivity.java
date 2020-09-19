@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class OccupationActivity extends AppCompatActivity {
     private Button button2; //student button
@@ -33,11 +34,11 @@ public class OccupationActivity extends AppCompatActivity {
         });
     }
     public void openStudent() {
-        Intent intent = new Intent(this, StudentHomeActivity.class);
+        Intent intent = new Intent(this, StudentSignUpActivity.class);
         startActivity(intent);
     }
     public void openTeacher() {
-        Intent intent = new Intent(this, TeacherHomeActivity.class);
+        Intent intent = new Intent(this, TeacherLogInActivity.class);
         startActivity(intent);
     }
 }

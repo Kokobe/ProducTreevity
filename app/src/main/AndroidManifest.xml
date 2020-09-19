@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.productreevity">
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"></uses-permission>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
+        <activity android:name=".Break4Activity"></activity>
+        <activity android:name=".Break3Activity" />
+        <activity android:name=".Break2Activity" />
+        <activity android:name=".Break1Activity" />
+        <activity android:name=".StudBreakActivity" />
+        <activity android:name=".TeacherLogInActivity" />
+        <activity android:name=".StudentLogInActivity" />
+        <activity android:name=".StudentSignUpActivity" />
         <activity
-
             android:name=".StartActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ProducTreevity.NoActionBar">
@@ -22,19 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".TeacherStatsActivity"></activity>
+        <activity android:name=".TeacherStatsActivity" />
         <activity android:name=".StudentStatsActivity" />
         <activity android:name=".TeacherHomeActivity" />
         <activity android:name=".StudentHomeActivity" />
         <activity android:name=".OccupationActivity" />
         <activity android:name=".TimerMainActivity" />
-
-        <service
-            android:name=".MyNotificationService"
-            android:enabled="true"
-            android:exported="true" />
     </application>
-
 
 </manifest>
