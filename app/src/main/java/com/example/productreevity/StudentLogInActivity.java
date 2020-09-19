@@ -3,7 +3,9 @@ package com.example.productreevity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -30,19 +32,20 @@ public class StudentLogInActivity extends AppCompatActivity {
     AppCompatActivity mActivty = this;
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mUsersRef = mRootRef.child("users");
-    FirebaseUser mUser;
 
-    private Button button12; //student log-in button
+
+
+    private Button student_login_btn; //student log-in button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_log_in);
-        button12 = (Button) findViewById(R.id.student_login_button);
-        button12.setOnClickListener(new View.OnClickListener() {
+
+        student_login_btn = (Button) findViewById(R.id.student_login_button);
+        student_login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                openStudLogInStudHome();
+                login();
             }
         });
     }
@@ -50,27 +53,34 @@ public class StudentLogInActivity extends AppCompatActivity {
         Intent intent = new Intent(this, StudentHomeActivity.class);
         startActivity(intent);
     }
-    public void login(View view) { // called by button
-        final Button loginButton = (Button) findViewById(R.id.student_login_button);
+    public void login() { // called by button
         final EditText name = (EditText) findViewById(R.id.student_name);
         final EditText username = (EditText) findViewById(R.id.student_username);
         final EditText password = (EditText) findViewById(R.id.student_password);
         final EditText passwordConfirm = (EditText) findViewById(R.id.student_confirm_password);
         final EditText studentID = (EditText) findViewById(R.id.student_id);
-        DatabaseReference userRef = mUsersRef.child(mUser.getUid());
-        userRef.addListenerForSingleValueEvent(postUserReadListener);
+
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.sharedPrefFileName), Context.MODE_PRIVATE);
+        String uid = sharedPref.getString(getString(R.string.uid_key), "");
+        Log.e(TAG, "my uid: " + uid);
+
         if(username.toString().equals("username") || username.getText().equals("")) {
-//            loginExisting();
+            Log.e(TAG, "login needs to change");
         } else {
 //            verifyNotExisting();
 //            checkPasswordMatch();
-            User user = new User(mUser.getUid(), name.toString(), username.toString(), "null@null.null", password.toString(), "student", studentID.toString());
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            userRef = database.getReference("users");
+
+            User user = new User(studentID.getText().toString(), name.getText().toString(), username.getText().toString(),
+                    "null@null.null", password.getText().toString(), "student", studentID.getText().toString());
             user.changeSeeds(1);
             Map<String, Object> userData = new HashMap<>();
-            userData.put(mUser.getUid(), user);
+            userData.put(uid, user);
             mUsersRef.updateChildren(userData);
+
+            Intent i = new Intent(mActivty, StudentHomeActivity.class);
+            startActivity(i);
+
         }
     }
     private ValueEventListener postUserReadListener = new ValueEventListener() {
