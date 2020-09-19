@@ -1,5 +1,7 @@
 package com.example.productreevity.classes;
 
+import java.util.List;
+
 public class User {
     public String user_id;
     public String name;
@@ -9,6 +11,7 @@ public class User {
     public String type;
     public String student_id; // student or class id
     public int seeds;
+    public List<Assignment> assignments;
 
     public User(){}
 
@@ -22,6 +25,7 @@ public class User {
         this.type = type;
         this.student_id = student_id;
         this.seeds = 0;
+        assignments = ArrayList<Assginment>();
     }
     public int getSeeds() {
         return seeds;
