@@ -1,8 +1,7 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.productreevity">
-
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -11,8 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
+        <activity android:name=".StudBreakChooseActivity"></activity>
+        <activity android:name=".TeacherLogInActivity" />
+        <activity android:name=".StudentLogInActivity" />
+        <activity android:name=".StudentSignUpActivity" />
         <activity
-
             android:name=".StartActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ProducTreevity.NoActionBar">
@@ -23,18 +25,28 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TeacherStatsActivity"></activity>
-        <activity android:name=".StudentStatsActivity" />
-        <activity android:name=".TeacherHomeActivity" />
-        <activity android:name=".StudentHomeActivity" />
-        <activity android:name=".OccupationActivity" />
-        <activity android:name=".TimerMainActivity" />
+        <activity
+            android:name=".TeacherStatsActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".StudentStatsActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".TeacherHomeActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".StudentHomeActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".OccupationActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
+        <activity
+            android:name=".TimerMainActivity"
+            android:theme="@style/Theme.ProducTreevity.NoActionBar" />
 
         <service
             android:name=".MyNotificationService"
             android:enabled="true"
             android:exported="true" />
     </application>
-
-
 </manifest>

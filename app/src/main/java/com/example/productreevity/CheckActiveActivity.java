@@ -1,15 +1,10 @@
 package com.example.productreevity;
 
-import android.app.KeyguardManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.os.PowerManager;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CheckActiveActivity extends AppCompatActivity {
