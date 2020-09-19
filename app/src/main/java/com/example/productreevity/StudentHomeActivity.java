@@ -11,6 +11,7 @@ import android.widget.ImageView;
 public class StudentHomeActivity extends AppCompatActivity {
     private ImageView button4; //timer button
     private ImageView button6; //student stats button
+    private ImageView imageView8; //student shop button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,14 @@ public class StudentHomeActivity extends AppCompatActivity {
                 openStats();
             }
         });
+        imageView8 = (ImageView) findViewById(R.id.imageView8);
+        imageView8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openStudShop();
+            }
+        });
     }
     public void openTimer() {
         Intent intent = new Intent(this, TimerMainActivity.class);
@@ -39,6 +48,10 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
     public void openStats() {
         Intent intent = new Intent(this, StudentStatsActivity.class);
+        startActivity(intent);
+    }
+    public void openStudShop() {
+        Intent intent = new Intent(this, StudentShopActivity.class);
         startActivity(intent);
     }
 
