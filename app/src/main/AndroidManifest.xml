@@ -8,7 +8,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
-        <activity android:name=".StudBreakChooseActivity"></activity>
+        <activity android:name=".Break4Activity"></activity>
+        <activity android:name=".Break3Activity" />
+        <activity android:name=".Break2Activity" />
+        <activity android:name=".Break1Activity" />
+        <activity android:name=".StudBreakActivity" />
         <activity android:name=".TeacherLogInActivity" />
         <activity android:name=".StudentLogInActivity" />
         <activity android:name=".StudentSignUpActivity" />
@@ -47,4 +51,5 @@
             android:enabled="true"
             android:exported="true" />
     </application>
+
 </manifest>
