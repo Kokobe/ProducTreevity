@@ -8,15 +8,18 @@ package com.example.productreevity;
 
 public class Countdown {
     private int secs;
-    public Countdown(int minutes, int seconds) {
-        this.secs = minutes*60 + seconds;
+    public Countdown(long millis) {
+        this.secs = (int)(millis / 1000);
     }
-    public Countdown(int hours, int minutes, int seconds) {
-        this.secs = hours*3600 + minutes*60 + seconds;
+    public Countdown(int hours, int mins, int secs) {
+        this.secs = hours*3600 + mins*60 + secs;
+    }
+    public Countdown(int mins, int secs) {
+        this(0, mins, secs);
     }
     public int[] breakdown() {
         int[] time = new int[3];
-        int secs = this.secs; // doesn't change original
+        int secs = (int)this.secs; // doesn't change original
         time[0] = secs / 3600;
         secs = secs % 3600;
         time[1] = secs / 60;
@@ -33,18 +36,6 @@ public class Countdown {
         time = time + String.format("%02d", breakdown[1]) + ":";
         time = time + String.format("%02d", breakdown[2]);
         return time;
-    }
-    public void decrease() {
-        this.secs--;
-    }
-    public void decrease(int seconds) {
-        this.secs -= seconds;
-    }
-    public void decrease(int minutes, int seconds) {
-        this.secs -= (minutes*60 + seconds);
-    }
-    public void decrease(int hours, int minutes, int seconds) {
-        this.secs -= (hours*3600 + minutes*60 + seconds);
     }
     public int getSecs() {
         return secs;

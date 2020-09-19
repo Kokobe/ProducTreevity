@@ -13,13 +13,24 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.os.CountDownTimer;
 
 public class MainActivity extends AppCompatActivity {
 
     public void rumTimer() {
-        Countdown timer = new Countdown(1, 0, 0);
+        Countdown countdown = new Countdown(1, 1, 7);
         final TextView mainTimer = (TextView) findViewById(R.id.main_timer);
-        mainTimer.setText();
+        mainTimer.setText(countdown.toString());
+        new CountDownTimer((long)(countdown.getSecs()*1000), 1000) {
+            public void onTick(long millisUntilFinished) {
+                Countdown countdown = new Countdown(millisUntilFinished);
+                mainTimer.setText(countdown.toString());
+            }
+            public void onFinish() {
+                mainTimer.setText("FINIS");
+            }
+        }.start();
+
     }
 
     @Override
