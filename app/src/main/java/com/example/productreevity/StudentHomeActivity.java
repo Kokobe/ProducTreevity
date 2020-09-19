@@ -14,7 +14,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
-        button4 = (Button) findViewById(R.id.button4);
+        button4 = (Button) findViewById(R.id.featured_assignment_btn);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -22,7 +22,7 @@ public class StudentHomeActivity extends AppCompatActivity {
                 openTimer();
             }
         });
-        button6 = (Button) findViewById(R.id.button6);
+        button6 = (Button) findViewById(R.id.stats_btn);
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
