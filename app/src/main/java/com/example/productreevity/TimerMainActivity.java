@@ -1,5 +1,6 @@
 package com.example.productreevity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,13 +37,25 @@ public class TimerMainActivity extends AppCompatActivity {
             }
         }.start();
     }
-
+    private Button button16; //to break selection page
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //hello
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 //        runTimer();
+        button16 = (Button) findViewById(R.id.button16);
+        button16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openBreakSel();
+            }
+        });
+    }
+    public void openBreakSel() {
+        Intent intent = new Intent(this, StudBreakActivity.class);
+        startActivity(intent);
     }
 
 
