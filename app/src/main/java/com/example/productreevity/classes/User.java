@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.classes;
 
 public class User {
     public String name;
