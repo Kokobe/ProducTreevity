@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "146390863520",
+    "firebase_url": "https://productreevity.firebaseio.com",
+    "project_id": "productreevity",
+    "storage_bucket": "productreevity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146390863520:android:f3c75ab456b4bfc97703c5",
+        "android_client_info": {
+          "package_name": "com.example.productreevity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146390863520-2ci2tdv9icpv7jdjdsttvlondn0hvmgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ7H_ZcAXQvKERXs7Khn6zA4mwC9zeUEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146390863520-2ci2tdv9icpv7jdjdsttvlondn0hvmgn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
