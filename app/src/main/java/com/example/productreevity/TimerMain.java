@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 
 import android.view.Menu;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import android.os.CountDownTimer;
 
 public class TimerMain extends AppCompatActivity {
+
+    final String TAG = "TimerMain";
 
     public void runTimer(View view) {
         Countdown countdown = new Countdown(0, 1, 7);
@@ -61,5 +64,16 @@ public class TimerMain extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(TAG, "pause");
+        sendNotification();
+    }
+
+    private void sendNotification() {
+
     }
 }
