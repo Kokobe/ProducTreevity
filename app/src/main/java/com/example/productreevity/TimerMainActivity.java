@@ -128,16 +128,15 @@ public class TimerMainActivity extends AppCompatActivity {
     }
     private void leftApp() {
         Log.e(TAG, "send notification");
-//        Intent intent = new Intent(this, null);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        Intent intent = new Intent(this, TimerMainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default")
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle("Don't lose your producTreevity")
                 .setContentText("Return to the app within 15 seconds.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-//                .setContentIntent(pendingIntent)
-//                .setFullScreenIntent(pendingIntent, true)
+                .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         int notificationId = 1;
@@ -158,12 +157,15 @@ public class TimerMainActivity extends AppCompatActivity {
     }
 
     private void goneForGood() {
+        Intent intent = new Intent(this, TimerMainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default")
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle(":(")
                 .setContentText("You didn't earn any seeds.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-//                .setContentIntent(pendingIntent)
+                .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         int notificationId = 2;
@@ -172,12 +174,15 @@ public class TimerMainActivity extends AppCompatActivity {
     }
 
     private void finished() {
+        Intent intent = new Intent(this, TimerMainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default")
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle("YAY!!!")
                 .setContentText("You earned your seeds.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-//                .setContentIntent(pendingIntent)
+                .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         int notificationId = 3;

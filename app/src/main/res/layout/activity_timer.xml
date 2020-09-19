@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:visibility="visible"
     tools:context=".TimerMainActivity"
-    android:background="@drawable/timer_background">
+    android:background="@drawable/timer_background"
+    android:launchMode="singleTop">
 
     <TextView
         android:id="@+id/main_timer"
