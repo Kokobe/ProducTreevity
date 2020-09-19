@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
         <activity android:name=".TeacherLogInActivity"></activity>
-        <activity android:name=".TeacherSignUpActivity" />
         <activity android:name=".StudentLogInActivity" />
         <activity android:name=".StudentSignUpActivity" />
         <activity
