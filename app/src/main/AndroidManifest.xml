@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProducTreevity">
         <activity
-            android:name=".CheckActiveActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ProducTreevity.NoActionBar">
             <intent-filter>
