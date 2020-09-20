@@ -71,7 +71,6 @@ public class StudentHomeActivity extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openStats();
             }
         });
