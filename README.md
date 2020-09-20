@@ -6,6 +6,7 @@ ProducTreevity is an educational application that boosts student productivity in
 # Features
 Students can:
 - Choose a timed study session with well-researched break activities to maximize productivity and mental health
+- Monitors whether students are staying on task and penalizes students that don't complete their desired length of study
 - Set and review their study patterns 
 - Receive assignment alerts from teachers and themselves
 - Earn "seed" points redeemable toward charitable initiatives for productivity
