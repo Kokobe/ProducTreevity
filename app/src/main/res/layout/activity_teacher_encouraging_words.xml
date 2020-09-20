@@ -4,19 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/inspire_bg"
     tools:context=".home.TeacherEncouragingWordsActivity">
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="201dp"
-        android:layout_marginEnd="93dp"
-        android:layout_marginBottom="511dp"
-        android:text="Teacher Encouraging Words Page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
