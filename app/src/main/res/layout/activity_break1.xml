@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".Break1Activity"
+    tools:context=".startAssignment.Break1Activity"
     android:background="@drawable/water_background">
 
     <Button
@@ -22,7 +21,3 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-=======
-    tools:context=".startAssignment.Break1Activity"
-    android:background="@drawable/water_background"/>
->>>>>>> todo
