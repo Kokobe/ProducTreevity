@@ -4,62 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/choosebreak_background"
+    android:background="@drawable/choosebreak222_background"
     tools:context=".startAssignment.StudBreakActivity">
 
     <ImageView
         android:id="@+id/button8"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="152dp"
-        android:src="@drawable/drinkwater_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button14"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/duolingo22_choosebreak"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <ImageView
         android:id="@+id/button9"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="250dp"
         android:adjustViewBounds="false"
-        android:src="@drawable/yoga_choosebreak_btn"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button13"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+        android:src="@drawable/yoga22_choosebreak"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/button13"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="154dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/duolingo_btn"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/relax22_choosebreak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <ImageView
         android:id="@+id/button14"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="47dp"
-        android:src="@drawable/nap_choice_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/nap22_choosebreak"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
