@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+
+import com.example.productreevity.R;
+import com.example.productreevity.startAssignment.Break1Activity;
+import com.example.productreevity.startAssignment.Break2Activity;
+import com.example.productreevity.startAssignment.Break3Activity;
+import com.example.productreevity.startAssignment.Break4Activity;
 
 public class StudBreakActivity extends AppCompatActivity {
     private ImageView button8; //break 1

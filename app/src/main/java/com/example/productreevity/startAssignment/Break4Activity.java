@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 //Power Nap
+import com.example.productreevity.R;
+
 public class Break4Activity extends AppCompatActivity {
     private Button button22; //timer button
     @Override

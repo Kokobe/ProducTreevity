@@ -6,9 +6,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.productreevity.classes.User;
+import com.example.productreevity.home.StudentHomeActivity;
+import com.example.productreevity.home.TeacherHomeActivity;
+import com.example.productreevity.onboarding.OccupationActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,12 +25,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class StartActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
@@ -108,8 +105,6 @@ public class StartActivity extends AppCompatActivity {
         public void onDataChange(DataSnapshot dataSnapshot) {
 
             if (dataSnapshot.exists()) { // if user exists
-
-
 
 
                 User user = dataSnapshot.getValue(User.class);
