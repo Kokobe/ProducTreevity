@@ -63,8 +63,8 @@ public class TimerMainActivity extends AppCompatActivity {
             }
             public void onFinish() {
                 timerOn = false;
-                finished();
-                recreate();
+                //finished();
+                //recreate();
                 finish();
             }
         }.start();
@@ -188,7 +188,7 @@ public class TimerMainActivity extends AppCompatActivity {
             }
             public void onFinish() {
                 notificationManager.cancel(1);
-                goneForGood();
+                //goneForGood();
             }
         }.start();
     }

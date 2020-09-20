@@ -6,5 +6,5 @@
     android:layout_height="match_parent"
     android:background="@drawable/inspire_bg"
     tools:context=".home.TeacherEncouragingWordsActivity">
-    
+
 </androidx.constraintlayout.widget.ConstraintLayout>
