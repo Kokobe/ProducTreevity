@@ -1,14 +1,16 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class TeacherSendingAssignmentsActivity extends AppCompatActivity {
+import com.example.productreevity.R;
+
+public class Break1Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_sending_assignments);
+        setContentView(R.layout.activity_break1);
     }
 }

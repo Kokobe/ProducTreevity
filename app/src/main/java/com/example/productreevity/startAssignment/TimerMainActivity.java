@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.os.CountDownTimer;
 
+import com.example.productreevity.R;
 import com.example.productreevity.classes.Countdown;
 
 public class TimerMainActivity extends AppCompatActivity {

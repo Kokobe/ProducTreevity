@@ -1,8 +1,10 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.productreevity.R;
 
 public class StudBreakChooseActivity extends AppCompatActivity {
 

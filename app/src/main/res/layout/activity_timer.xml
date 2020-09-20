@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".TimerMainActivity"
+    tools:context=".startAssignment.TimerMainActivity"
     android:background="@drawable/timer_background"
     android:launchMode="singleTop">
 
