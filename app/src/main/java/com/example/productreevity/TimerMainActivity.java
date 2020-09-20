@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.CountDownTimer;
 
@@ -51,6 +52,8 @@ public class TimerMainActivity extends AppCompatActivity {
         }.start();
     }
 
+    private Button button16; //to break selection
+    private ImageView imageView6; //give-up, back to student home
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         timerOn =false;
@@ -59,7 +62,15 @@ public class TimerMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 //        runTimer();
-        Button button16 = (Button) findViewById(R.id.button16);
+        imageView6 = (ImageView) findViewById(R.id.imageView6);
+        imageView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openGiveUp();
+            }
+        });
+        button16 = (Button) findViewById(R.id.button16);
         button16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +78,10 @@ public class TimerMainActivity extends AppCompatActivity {
                 openBreakSel();
             }
         });
+    }
+    public void openGiveUp() {
+        Intent intent = new Intent(this, StudentHomeActivity.class);
+        startActivity(intent);
     }
     public void openBreakSel() {
         Intent intent = new Intent(this, StudBreakActivity.class);

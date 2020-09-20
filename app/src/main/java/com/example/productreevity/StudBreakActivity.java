@@ -9,15 +9,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class StudBreakActivity extends AppCompatActivity {
-    private Button button8; //break 1
-    private Button button9; //break 2
-    private Button button13; //break 3
-    private Button button14; //break 4
+    private ImageView button8; //break 1
+    private ImageView button9; //break 2
+    private ImageView button13; //break 3
+    private ImageView button14; //break 4
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stud_break);
-        button8 = (Button) findViewById(R.id.button8);
+        button8 = (ImageView) findViewById(R.id.button8);
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,7 +25,7 @@ public class StudBreakActivity extends AppCompatActivity {
                 openBreak1();
             }
         });
-        button9 = (Button) findViewById(R.id.button9);
+        button9 = (ImageView) findViewById(R.id.button9);
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +33,7 @@ public class StudBreakActivity extends AppCompatActivity {
                 openBreak2();
             }
         });
-        button13 = (Button) findViewById(R.id.button13);
+        button13 = (ImageView) findViewById(R.id.button13);
         button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +41,7 @@ public class StudBreakActivity extends AppCompatActivity {
                 openBreak3();
             }
         });
-        button14 = (Button) findViewById(R.id.button14);
+        button14 = (ImageView) findViewById(R.id.button14);
         button14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
