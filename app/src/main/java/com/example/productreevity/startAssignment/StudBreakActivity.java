@@ -15,9 +15,9 @@ import com.example.productreevity.startAssignment.Break3Activity;
 import com.example.productreevity.startAssignment.Break4Activity;
 
 public class StudBreakActivity extends AppCompatActivity {
-    private ImageView button8; //break 1
+    private ImageView button8; //break 3--duolingo
     private ImageView button9; //break 2
-    private ImageView button13; //break 3
+    private ImageView button13; //break 1--relax
     private ImageView button14; //break 4
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class StudBreakActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                openBreak1();
+                openBreak3();
             }
         });
         button9 = (ImageView) findViewById(R.id.button9);
@@ -44,7 +44,7 @@ public class StudBreakActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                openBreak3();
+                openBreak1();
             }
         });
         button14 = (ImageView) findViewById(R.id.button14);

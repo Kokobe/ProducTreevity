@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".startAssignment.Break1Activity"
-    android:background="@drawable/relaxbreak_background">
+    android:background="@drawable/relaxbreak_background"
+    tools:ignore="ExtraText">
 
 
     <Button
@@ -13,11 +14,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="509dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="174dp"
+        android:layout_marginBottom="44dp"
         android:text="Back to Timer"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <VideoView
+        android:id="@+id/videoView2"
+        android:layout_width="393dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
