@@ -59,30 +59,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="161dp"
-        android:layout_marginBottom="70dp"
         android:text="Break"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="217dp"
         android:layout_height="194dp"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal_background"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="192dp" />
+        android:layout_marginTop="110dp"
+        app:layout_constraintEnd_toEndOf="@+id/user_time"
+        app:layout_constraintStart_toStartOf="@+id/user_time"
+        app:layout_constraintTop_toBottomOf="@+id/button16"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal_background" />
 
     <TimePicker
         android:id="@+id/user_time"
         android:layout_width="184dp"
         android:layout_height="169dp"
-        android:layout_marginBottom="300dp"
         android:amPmBackgroundColor="#FFFFFF"
         android:amPmTextColor="#FFFFFF"
         android:numbersBackgroundColor="#EF0404"
@@ -92,10 +90,11 @@
         android:textColor="@color/purple_200"
         android:textStyle="bold"
         android:timePickerMode="spinner"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.716"
-        tools:layout_editor_absoluteX="113dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.716" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
