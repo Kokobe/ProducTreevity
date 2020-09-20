@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Break1Activity"
-    android:background="@drawable/water_background">
+    android:background="@drawable/relaxbreak_background">
+
 
     <Button
         android:id="@+id/button4"
