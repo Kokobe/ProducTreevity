@@ -151,10 +151,10 @@ public class StudentHomeActivity extends AppCompatActivity {
                 l.add(new Assignment(5, "Bio Chapter 1", new Date()));
                 l.add(new Assignment(5, "Hum Core Article", new Date()));
                 l.add(new Assignment(5, "ICS 46", new Date()));
-                l.add(new Assignment(5, "ICS 33", new Date()));
-                l.add(new Assignment(5, "Bio Chapter 1", new Date()));
-                l.add(new Assignment(5, "Hum Core Article", new Date()));
-                l.add(new Assignment(5, "ICS 46", new Date()));
+                l.add(new Assignment(5, "Psychology Chap 2", new Date()));
+                l.add(new Assignment(5, "Algebra", new Date()));
+                l.add(new Assignment(5, "Sociology 3A", new Date()));
+                l.add(new Assignment(5, "Writing 3C", new Date()));
 
                 mUsersRef.child(uid).child("assignments").setValue(l).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
