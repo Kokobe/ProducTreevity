@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +38,7 @@ import java.util.Date;
 import java.util.List;
 
 public class StudentHomeActivity extends AppCompatActivity {
+    private static final String TAG = "StudentHomeActivity";
     private ImageView button4; //timer button
     private ImageView button6; //student stats button
     private ImageView imageView8; //student shop button
@@ -48,6 +50,10 @@ public class StudentHomeActivity extends AppCompatActivity {
     String studentID;
 
 
+//    Intent intent = new Intent(getBaseContext(), SignoutActivity.class);
+//intent.putExtra("EXTRA_SESSION_ID", sessionId);
+//    startActivity(intent);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +64,7 @@ public class StudentHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                openTimer();
+                openTimer("Trigonometry");
             }
         });
         button6 = (ImageView) findViewById(R.id.button6);
@@ -98,7 +104,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull Item item, @NonNull View view) {
-                openTimer();
+                openTimer(item.toString());
             }
         });
 
@@ -174,8 +180,10 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
 
 
-    public void openTimer() {
-        Intent intent = new Intent(this, TimerMainActivity.class);
+    public void openTimer(String caller) {
+        Log.e("Custom1", caller);
+        Intent intent = new Intent(getBaseContext(), TimerMainActivity.class);
+        intent.putExtra("CALLER", caller);
         startActivity(intent);
     }
     public void openStats() {

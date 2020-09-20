@@ -29,6 +29,8 @@ import com.example.productreevity.R;
 import com.example.productreevity.classes.Countdown;
 import com.example.productreevity.home.StudentHomeActivity;
 
+import org.w3c.dom.Text;
+
 public class TimerMainActivity extends AppCompatActivity {
 
     private static final String CHANNEL_ID = "default";
@@ -84,6 +86,10 @@ public class TimerMainActivity extends AppCompatActivity {
                 openGiveUp();
             }
         });
+        TextView assignmentTitle = (TextView) findViewById(R.id.assignment_title);
+        String caller = getIntent().getStringExtra("CALLER");
+        Log.e("Custom2", caller);
+        assignmentTitle.setText(caller);
         button16 = (Button) findViewById(R.id.button16);
         button16.setOnClickListener(new View.OnClickListener() {
             @Override
