@@ -15,6 +15,10 @@ Teachers can:
 - Send assignment alerts (push notifications)
 - Send words of encouragement to their students
 
+Both can: 
+- Sign-up/Login and upload scalable user profile data using Firebase Realtime Database
+- Receive push notifications
+
 
 ## Tools Used:
 Git, Java, Android Studio, Firebase, Firebase Realtime Database, Firebase Auth, Firebase Cloud Messaging, IBM Push Notifications, Sketch/Lunacy. 
