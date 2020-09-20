@@ -17,7 +17,7 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#00BCD4"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
