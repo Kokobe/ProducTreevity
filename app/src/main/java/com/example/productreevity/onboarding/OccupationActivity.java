@@ -1,13 +1,14 @@
 
-package com.example.productreevity;
+package com.example.productreevity.onboarding;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.productreevity.R;
 
 public class OccupationActivity extends AppCompatActivity {
     private ImageView button2; //student button

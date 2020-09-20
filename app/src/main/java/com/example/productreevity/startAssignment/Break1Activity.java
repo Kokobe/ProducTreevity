@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 //Drink a Glass of Water
+
+
+import com.example.productreevity.R;
+
 public class Break1Activity extends AppCompatActivity {
     private Button button4; //timer button
     @Override

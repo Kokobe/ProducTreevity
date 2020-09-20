@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.onboarding;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.productreevity.R;
+import com.example.productreevity.home.TeacherHomeActivity;
 import com.example.productreevity.classes.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,39 +26,39 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StudentLogInActivity extends AppCompatActivity {
+public class TeacherLogInActivity extends AppCompatActivity {
 
 
-    private static final String TAG = "Student Login Activity";
+    private static final String TAG = "Teacher Login Activity";
     AppCompatActivity mActivty = this;
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mUsersRef = mRootRef.child("users");
 
-    private Button student_login_btn; //student log-in button
+    private Button teacher_login_button; //teacher log-in button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_log_in);
+        setContentView(R.layout.activity_teacher_log_in);
 
-        student_login_btn = (Button) findViewById(R.id.student_login_button);
-        student_login_btn.setOnClickListener(new View.OnClickListener() {
+        teacher_login_button = (Button) findViewById(R.id.teacher_login_button);
+        teacher_login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login(v);
             }
         });
     }
-    public void openStudLogInStudHome() {
-        Intent intent = new Intent(this, StudentHomeActivity.class);
+    public void openTeachLogInStudHome() {
+        Intent intent = new Intent(this, TeacherHomeActivity.class);
         startActivity(intent);
     }
     public void login(View view) { // called by button
-        final EditText name = (EditText) findViewById(R.id.student_name);
-        final EditText username = (EditText) findViewById(R.id.student_username);
-        final EditText password = (EditText) findViewById(R.id.student_password);
-        final EditText passwordConfirm = (EditText) findViewById(R.id.student_confirm_password);
-        final EditText studentID = (EditText) findViewById(R.id.student_id);
+        final EditText name = (EditText) findViewById(R.id.teacher_name);
+        final EditText username = (EditText) findViewById(R.id.teacher_username);
+        final EditText password = (EditText) findViewById(R.id.teacher_password);
+        final EditText passwordConfirm = (EditText) findViewById(R.id.teacher_confirm_password);
+        final EditText teacherID = (EditText) findViewById(R.id.class_id);
 
         SharedPreferences sharedPref = getSharedPreferences(
                 getString(R.string.sharedPrefFileName), Context.MODE_PRIVATE);
@@ -68,16 +70,15 @@ public class StudentLogInActivity extends AppCompatActivity {
         } else {
 //            verifyNotExisting();
 //            checkPasswordMatch();
-            Log.e(TAG, "ID: " + studentID.getText().toString());
 
-            User user = new User(studentID.getText().toString(), name.getText().toString(), username.getText().toString(),
-                    "null@null.null", password.getText().toString(), "student", studentID.getText().toString());
+            User user = new User(teacherID.getText().toString(), name.getText().toString(), username.getText().toString(),
+                    "null@null.null", password.getText().toString(), "teacher", teacherID.getText().toString());
             user.changeSeeds(1);
             Map<String, Object> userData = new HashMap<>();
             userData.put(uid, user);
             mUsersRef.updateChildren(userData);
 
-            Intent i = new Intent(mActivty, StudentHomeActivity.class);
+            Intent i = new Intent(mActivty, TeacherHomeActivity.class);
             startActivity(i);
 
         }
@@ -86,7 +87,7 @@ public class StudentLogInActivity extends AppCompatActivity {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
             if (dataSnapshot.exists()) {
-                Intent i = new Intent(mActivty, StudentHomeActivity.class);
+                Intent i = new Intent(mActivty, TeacherHomeActivity.class);
                 startActivity(i);
 
                 User user = dataSnapshot.getValue(User.class);
@@ -104,7 +105,7 @@ public class StudentLogInActivity extends AppCompatActivity {
                             }
                         });
             } else { //create new profile
-//                User user = new User(mUser.getUid(), "Varij", "jhaveriv", "jhaveriv@uci.edu", "qwerty", "student", "7894562");
+//                User user = new User(mUser.getUid(), "Varij", "jhaveriv", "jhaveriv@uci.edu", "qwerty", "teacher", "7894562");
 //                FirebaseDatabase database = FirebaseDatabase.getInstance();
 //                DatabaseReference userRef = database.getReference("users");
 //                user.changeSeeds(1);

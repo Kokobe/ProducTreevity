@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -25,7 +25,9 @@ import android.widget.TextView;
 import android.os.CountDownTimer;
 import android.widget.TimePicker;
 
+import com.example.productreevity.R;
 import com.example.productreevity.classes.Countdown;
+import com.example.productreevity.home.StudentHomeActivity;
 
 public class TimerMainActivity extends AppCompatActivity {
 
@@ -59,6 +61,7 @@ public class TimerMainActivity extends AppCompatActivity {
                 timerOn = false;
                 finished();
                 recreate();
+                finish();
             }
         }.start();
     }
@@ -196,7 +199,9 @@ public class TimerMainActivity extends AppCompatActivity {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         int notificationId = 2;
         notificationManager.notify(notificationId, builder.build());
-        recreate();
+        Intent newintent = new Intent(this, TimerMainActivity.class);
+        startActivity(newintent);
+        finish();
     }
 
     private void finished() {
@@ -213,6 +218,8 @@ public class TimerMainActivity extends AppCompatActivity {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         int notificationId = 3;
         notificationManager.notify(notificationId, builder.build());
-        recreate();
+        Intent newintent = new Intent(this, TimerMainActivity.class);
+        startActivity(newintent);
+        finish();
     }
 }

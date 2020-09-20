@@ -7,7 +7,7 @@
     android:background="@drawable/timer_background"
     android:launchMode="singleTop"
     android:visibility="visible"
-    tools:context=".TimerMainActivity">
+    tools:context=".startAssignment.TimerMainActivity">
 
     <TextView
         android:id="@+id/main_timer"

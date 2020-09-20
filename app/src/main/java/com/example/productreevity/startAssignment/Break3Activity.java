@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 //Duolingo
+
+import com.example.productreevity.R;
+
 public class Break3Activity extends AppCompatActivity {
     private Button button21; //timer button
     @Override
