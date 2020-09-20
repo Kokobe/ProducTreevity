@@ -6,35 +6,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.productreevity.R;
 import com.example.productreevity.startAssignment.TimerMainActivity;
 
 public class TeacherHomeActivity extends AppCompatActivity {
-    private Button button5; //timer button
-    private Button button7; //teacher stats button
-    private Button button17; //teacher encouraging words button
-    private Button button18; //teacher send assignments button
+
+    private ImageView teacher_stats_btn; //teacher stats button
+    private ImageView button17; //teacher encouraging words button
+    private ImageView button18; //teacher send assignments button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activtiy_teacher_home);
-        button5 = (Button) findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openTimerBtn();
-            }
-        });
-        button7 = (Button) findViewById(R.id.button7);
-        button7.setOnClickListener(new View.OnClickListener() {
+
+        teacher_stats_btn = (ImageView) findViewById(R.id.teacher_stats_btn);
+        teacher_stats_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 openStatsBtn();
             }
         });
-        button17 = (Button) findViewById(R.id.button17);
+        button17 = (ImageView) findViewById(R.id.button17);
         button17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +37,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
                 openEncouragingWords();
             }
         });
-        button18 = (Button) findViewById(R.id.button18);
+        button18 = (ImageView) findViewById(R.id.button18);
         button18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,10 +46,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
             }
         });
     }
-    public void openTimerBtn() {
-        Intent intent = new Intent(this, TimerMainActivity.class);
-        startActivity(intent);
-    }
+
     public void openStatsBtn() {
         Intent intent = new Intent(this, TeacherStatsActivity.class);
         startActivity(intent);
