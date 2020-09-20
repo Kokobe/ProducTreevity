@@ -90,7 +90,7 @@ public class TimerMainActivity extends AppCompatActivity {
         });
         TextView assignmentTitle = (TextView) findViewById(R.id.assignment_title);
         String caller = getIntent().getStringExtra("CALLER");
-        Log.e("Custom2", caller);
+
         assignmentTitle.setText(caller);
         button16 = (Button) findViewById(R.id.button16);
         button16.setOnClickListener(new View.OnClickListener() {

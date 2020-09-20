@@ -22,7 +22,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="200dp"
         android:adjustViewBounds="false"
         android:src="@drawable/yoga22_choosebreak"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,10 +43,9 @@
         android:id="@+id/button14"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="250dp"
         android:layout_marginEnd="10dp"
         android:src="@drawable/nap22_choosebreak"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/button9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
