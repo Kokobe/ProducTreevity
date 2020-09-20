@@ -61,6 +61,7 @@ public class TimerMainActivity extends AppCompatActivity {
                 timerOn = false;
                 finished();
                 recreate();
+                finish();
             }
         }.start();
     }
@@ -198,7 +199,9 @@ public class TimerMainActivity extends AppCompatActivity {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         int notificationId = 2;
         notificationManager.notify(notificationId, builder.build());
-        recreate();
+        Intent newintent = new Intent(this, TimerMainActivity.class);
+        startActivity(newintent);
+        finish();
     }
 
     private void finished() {
@@ -215,6 +218,8 @@ public class TimerMainActivity extends AppCompatActivity {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         int notificationId = 3;
         notificationManager.notify(notificationId, builder.build());
-        recreate();
+        Intent newintent = new Intent(this, TimerMainActivity.class);
+        startActivity(newintent);
+        finish();
     }
 }
