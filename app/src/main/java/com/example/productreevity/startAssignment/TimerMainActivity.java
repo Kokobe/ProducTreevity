@@ -41,14 +41,14 @@ public class TimerMainActivity extends AppCompatActivity {
         final TimePicker userTime = (TimePicker) findViewById(R.id.user_time);
         final ImageView timeBox = (ImageView) findViewById(R.id.imageView7);
         createNotificationChannel();
-        int minutes = userTime.getHour() - 12;
+        int minutes = userTime.getHour();
         int seconds = userTime.getMinute();
         userTime.setVisibility(View.GONE);
         timeBox.setVisibility(View.GONE);
         Countdown countdown = new Countdown(minutes, seconds);
         timerOn = true;
         final Button startButton = (Button) findViewById(R.id.start_timer);
-        startButton.setVisibility(View.GONE);
+        startButton.setVisibility(View.INVISIBLE);
         final TextView mainTimer = (TextView) findViewById(R.id.main_timer);
         mainTimer.setVisibility(View.VISIBLE);
         mainTimer.setText(countdown.toString());
