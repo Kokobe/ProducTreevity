@@ -8,7 +8,7 @@
     tools:context=".TeacherHomeActivity">
 
     <ImageView
-        android:id="@+id/button7"
+        android:id="@+id/teacher_stats_btn"
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:layout_marginStart="14dp"
@@ -27,7 +27,7 @@
         android:layout_marginTop="26dp"
         android:layout_marginEnd="14dp"
         android:src="@drawable/encourage_teacherhome_btn"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintEnd_toStartOf="@+id/teacher_stats_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button18" />
 
