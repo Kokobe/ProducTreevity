@@ -31,11 +31,19 @@ android {
 
 dependencies {
 
+    // Automatically pulls in core SDK
+    implementation group: 'com.ibm.mobilefirstplatform.clientsdk.android',
+            name: 'push',
+            version: '3.+',
+            ext: 'aar',
+            transitive: true
+
     implementation 'com.xwray:groupie:2.8.1'
 
-    implementation 'com.google.firebase:firebase-analytics:17.5.0'
     implementation 'com.google.firebase:firebase-auth:19.4.0'
     implementation 'com.google.firebase:firebase-database:19.4.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
 
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
