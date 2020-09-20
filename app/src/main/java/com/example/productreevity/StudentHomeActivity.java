@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 public class StudentHomeActivity extends AppCompatActivity {
@@ -17,7 +16,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
 
-        button4 = (ImageView) findViewById(R.id.button4);
+        button4 = (ImageView) findViewById(R.id.start_assignment_btn);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
