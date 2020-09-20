@@ -104,7 +104,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull Item item, @NonNull View view) {
-                openTimer(item.toString());
+                openTimer(((AssignmentItem) item).text);
             }
         });
 

@@ -12,7 +12,7 @@ import com.xwray.groupie.Item;
 
 public class AssignmentItem extends Item<GroupieViewHolder> {
 
-    private String text;
+    public String text;
 
     public AssignmentItem(String s) {
         this.text = s;

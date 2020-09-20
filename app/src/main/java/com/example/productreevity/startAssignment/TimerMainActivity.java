@@ -44,6 +44,8 @@ public class TimerMainActivity extends AppCompatActivity {
         final ImageView timeBox = (ImageView) findViewById(R.id.imageView7);
         createNotificationChannel();
         int minutes = userTime.getHour();
+        if (minutes == 0)
+            minutes += 12;
         int seconds = userTime.getMinute();
         userTime.setVisibility(View.GONE);
         timeBox.setVisibility(View.GONE);
