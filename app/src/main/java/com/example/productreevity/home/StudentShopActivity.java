@@ -6,18 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.productreevity.R;
 
 public class StudentShopActivity extends AppCompatActivity {
-    private Button button12; //Donation One
-    private Button button19; //Donation Two
-    private Button button20; //DonationThree
+    private ImageView button12; //Donation One
+    private ImageView button19; //Donation Two
+    private ImageView button20; //DonationThree
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_shop);
-        button12 = (Button) findViewById(R.id.button12);
+        button12 = (ImageView) findViewById(R.id.button12);
         button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,7 +26,7 @@ public class StudentShopActivity extends AppCompatActivity {
                 openDonationOne();
             }
         });
-        button19 = (Button) findViewById(R.id.button19);
+        button19 = (ImageView) findViewById(R.id.button19);
         button19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +34,7 @@ public class StudentShopActivity extends AppCompatActivity {
                 openDonationTwo();
             }
         });
-        button20 = (Button) findViewById(R.id.button20);
+        button20 = (ImageView) findViewById(R.id.button20);
         button20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

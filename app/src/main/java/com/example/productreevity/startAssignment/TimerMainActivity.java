@@ -48,7 +48,7 @@ public class TimerMainActivity extends AppCompatActivity {
         Countdown countdown = new Countdown(minutes, seconds);
         timerOn = true;
         final Button startButton = (Button) findViewById(R.id.start_timer);
-        startButton.setVisibility(View.INVISIBLE);
+        startButton.setVisibility(View.GONE);
         final TextView mainTimer = (TextView) findViewById(R.id.main_timer);
         mainTimer.setVisibility(View.VISIBLE);
         mainTimer.setText(countdown.toString());

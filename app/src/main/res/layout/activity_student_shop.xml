@@ -7,39 +7,48 @@
     android:background="@drawable/redeem_background"
     tools:context=".home.StudentHomeActivity">
 
-
-    <TextView
-        android:id="@+id/textView26"
+    <ImageView
+        android:id="@+id/button19"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shop Page"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="48dp" />
+        android:layout_height="250dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/plantatree_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/button12"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="250dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="240dp"
         android:src="@drawable/donatemeal_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
-
-    <ImageView
-        android:id="@+id/button19"
-        android:layout_width="350dp"
-        android:layout_height="250dp"
-        android:src="@drawable/plantatree_btn"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="212dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/button20"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="250dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/climatechange_btn"
-        app:layout_constraintTop_toBottomOf="@+id/button12"
-        tools:layout_editor_absoluteX="45dp" />
+        android:layout_marginTop="395dp"
+        android:src="@drawable/donatetoclimatechange_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:fontFamily="@font/futura_medium"
+        android:text="300"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
