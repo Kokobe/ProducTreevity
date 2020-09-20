@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/teacherhome_background"
-    tools:context=".TeacherHomeActivity">
+    tools:context=".home.TeacherHomeActivity">
 
     <ImageView
         android:id="@+id/teacher_stats_btn"

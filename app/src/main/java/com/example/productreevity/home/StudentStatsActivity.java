@@ -1,14 +1,16 @@
-package com.example.productreevity;
+package com.example.productreevity.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Break2Activity extends AppCompatActivity {
+import com.example.productreevity.R;
+
+public class StudentStatsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_break2);
+        setContentView(R.layout.activity_student_stats);
     }
 }

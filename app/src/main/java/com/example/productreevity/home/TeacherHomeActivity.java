@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.productreevity.R;
+import com.example.productreevity.startAssignment.TimerMainActivity;
+
 public class TeacherHomeActivity extends AppCompatActivity {
 
     private ImageView teacher_stats_btn; //teacher stats button
@@ -16,7 +19,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher);
+        setContentView(R.layout.activtiy_teacher_home);
 
         teacher_stats_btn = (ImageView) findViewById(R.id.teacher_stats_btn);
         teacher_stats_btn.setOnClickListener(new View.OnClickListener() {

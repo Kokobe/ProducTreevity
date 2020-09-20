@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -6,6 +6,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.productreevity.R;
 
 public class CheckActiveActivity extends AppCompatActivity {
 

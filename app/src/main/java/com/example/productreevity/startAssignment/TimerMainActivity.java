@@ -1,4 +1,4 @@
-package com.example.productreevity;
+package com.example.productreevity.startAssignment;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -17,10 +18,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.CountDownTimer;
+import android.widget.TimePicker;
 
+import com.example.productreevity.R;
 import com.example.productreevity.classes.Countdown;
+import com.example.productreevity.home.StudentHomeActivity;
 
 public class TimerMainActivity extends AppCompatActivity {
 
@@ -29,9 +36,16 @@ public class TimerMainActivity extends AppCompatActivity {
     private boolean running;
     private boolean timerOn;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void runTimer(View view) {
+        final TimePicker userTime = (TimePicker) findViewById(R.id.user_time);
+        final ImageView timeBox = (ImageView) findViewById(R.id.imageView7);
         createNotificationChannel();
-        Countdown countdown = new Countdown(15, 0);
+        int minutes = userTime.getHour() - 12;
+        int seconds = userTime.getMinute();
+        userTime.setVisibility(View.GONE);
+        timeBox.setVisibility(View.GONE);
+        Countdown countdown = new Countdown(minutes, seconds);
         timerOn = true;
         final Button startButton = (Button) findViewById(R.id.start_timer);
         startButton.setVisibility(View.INVISIBLE);
@@ -51,6 +65,8 @@ public class TimerMainActivity extends AppCompatActivity {
         }.start();
     }
 
+    private Button button16; //to break selection
+    private ImageView imageView6; //give-up, back to student home
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         timerOn =false;
@@ -59,7 +75,15 @@ public class TimerMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 //        runTimer();
-        Button button16 = (Button) findViewById(R.id.button16);
+        imageView6 = (ImageView) findViewById(R.id.imageView6);
+        imageView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openGiveUp();
+            }
+        });
+        button16 = (Button) findViewById(R.id.button16);
         button16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +91,10 @@ public class TimerMainActivity extends AppCompatActivity {
                 openBreakSel();
             }
         });
+    }
+    public void openGiveUp() {
+        Intent intent = new Intent(this, StudentHomeActivity.class);
+        startActivity(intent);
     }
     public void openBreakSel() {
         Intent intent = new Intent(this, StudBreakActivity.class);
